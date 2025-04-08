@@ -1,0 +1,88 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --> 
+<article>
+
+  <h1>Formulario</h1>
+
+  <div id="formularioForm">
+    <!-- Nombre Completo -->
+    <form [formGroup]="nombres">
+      <p id="datosGenerales">
+      <input type="text" title="Escriba su nombre." name="nombre" id="name" placeholder="Nombre" maxlength="20" required [formControl]="name01">
+      <span class="validity" id="validName"></span>
+
+      <input type="text" title="Escriba su apellido paterno" name="apellidoPaterno" id="name2" placeholder="Apellido Paterno" maxlength="20" required formControlName="name02">
+      <span class="validity" id="validName2"></span>
+
+      <input type="text" title="Escriba su apellido materno" name="apellidoMaterno" id="name3" placeholder="Apellido Materno" maxlength="20" required formControlName="name03">
+      <span class="validity" id="validName3"></span>
+    </p>
+    </form>
+    
+    <!-- Direccion General -->
+    <div id="direcciones1">
+      <input type="text" title="Escriba su domicilio" name="calle" id="street" placeholder="Domicilio" maxlength="30" required>
+      <span class="validity" id="validStreet"></span>
+
+      <input type="number" title="Inserte su codigo postal" name="codigoPostal" id="zipCode" placeholder="C.P." min="10000" max="99999" required>
+      <span class="validity" id="validZipCode"></span>
+    </div>
+    <!-- Estado y Municipio -->
+    <div id="direcciones2">
+      <fieldset id="stateField">
+        <legend id="sfID">Estado</legend>
+        <select name="estado" id="state" required>
+          <!-- Estados -->
+        </select>
+        <span class="validity" id="validState"></span>
+      </fieldset>
+
+      <fieldset id="municipalityField">
+        <legend id="mfID">Municipio</legend>
+        <select name="municipio" id="municipality">
+          <!-- Municipios -->
+        </select>
+      </fieldset>
+    </div>
+    <!-- Telefono -->
+    <div id="datosExtra">
+      <input type="tel" title="Escriba su numero de telefono" name="telefono" id="phone" placeholder="No. de telefono" minlength="10" maxlength="10" required>
+      <span class="validity" id="validPhone"></span>
+    </div>
+    <!-- Genero y Educacion -->
+    <div id="optionalStuff">
+      <fieldset id="gender">
+        <legend>Sexo</legend>
+        <div>
+          <input type="radio" name="genero" id="genderMale" value="Hombre" checked>
+          <label for="genderMale">Hombre</label>
+
+          <input type="radio" name="genero" id="genderFemale" value="Mujer">
+          <label for="genderFemale">Mujer</label>
+
+          <input type="radio" name="genero" id="genderOther" value="Otro">
+          <label for="genderOther">Otro</label>
+        </div>
+      </fieldset>
+
+      <fieldset id="education">
+        <legend>Educacion</legend>
+        <input type="checkbox" name="education" id="eduSecundaria" value="Secundaria">
+        <label for="eduSecundaria">Secundaria</label>
+
+        <input type="checkbox" name="education" id="eduPrepa" value="Preparatoria">
+        <label for="eduPrepa">Preparatoria</label>
+
+        <input type="checkbox" name="education" id="eduUni" value="Universidad">
+        <label for="eduUni">Universidad</label>
+      </fieldset>
+    </div>
+
+    <!-- Botones -->
+    <div id="buttons">
+      <button id="reset">Limiar</button>
+      <button id="sendForm">Enviar</button>
+    </div>
+  </div>
+</article>
+
+<router-outlet />

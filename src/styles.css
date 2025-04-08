@@ -1,0 +1,130 @@
+/* --- ESTILO DE LA PAGINA --- */
+html{ /* Toda la pagina */
+    font-family: sans-serif;
+    background-color: #808080;
+}
+body{ /* Cuerpo de la pagina */
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 1000px;
+    border: solid #000000;
+    border-radius: 15px;
+    background-color: #f4f4f4
+}
+
+h1{ /* El texto grande que dice: Formulario */
+    text-align: center;
+}
+
+span.validity{ /* Los "iconos" de las validaciones */
+    margin-right: 10px;
+}
+
+/* Cambia el color del área al ser seleccionada */
+input[type=text]:focus{
+    background-color: #add8e6;
+}
+input[type=number]:focus{
+    background-color: #add8e6;
+}
+input[type=tel]:focus{
+    background-color: #add8e6;
+}
+
+p#datosGenerales{ /* Contiene: Nombre y Apellidos*/
+    display: flex;
+}
+input#name1, #name2, #name3{
+    width: 200px;
+    height: 20px;
+}
+input#name, #name2, #name3, fieldset#stateField, #municipalityField{
+    margin-right: 15px;
+    margin-left: 25px;
+}
+
+div#direcciones1{ /* Contiene: Direccion y Codigo Postal */
+    display: flex;
+}
+input#street, #zipCode{
+    margin-right: 15px;
+    margin-left: 25px;
+    width: 200px;
+    height: 20px;
+}
+
+div#direcciones2{ /* Contiene: Estado y Municipio */
+    display: flex;
+}
+select#state{
+    margin-right: 15px;
+    height: 25px;
+}
+select#municipality{
+    height: 25px;
+}
+fieldset#stateField, #municipalityField{ /* Les da esquinas redondas */
+    width: 250px;
+    margin-right: 10px;
+    border-radius: 5px 15px;
+    border-width: 2px;
+    border-color: #000000;
+}
+
+div#datosExtra{ /* Contiene: Telefono */
+    display: flex;
+}
+input#phone{
+    margin-right: 15px;
+    margin-left: 25px;
+    width: 200px;
+    height: 20px;
+}
+
+div#optionalStuff{ /* Contiene: Genero y Educacion */
+    display: flex;
+    margin-left: 25px;
+}
+fieldset#gender, #education{ /* Les da esquinas redondas */
+    width: 400px;
+    margin-right: 10px;
+    border-radius: 5px 15px;
+    border-width: 2px;
+    border-color: #000000;
+}
+
+/* Botones */
+div#buttons{ /* Todos los botones */
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+}
+button#reset{ /* El boton "Limpiar" */
+    width: 200px;
+    height: 35px;
+    background-color: #008b8b;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+}
+button#reset:hover{ /* Al poner el mouse por encima del boton */
+    box-shadow: 0px 0px 10px #54fcfc;
+    background-color: #3fc5c5;
+}
+button#sendForm{ /* El boton "Enviar" */
+    margin-left: auto;
+    width: 200px;
+    height: 35px;
+    background-color: #228b22;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+}
+button#sendForm:hover{ /* Al poner el mouse por encima del boton */
+    box-shadow: 0px 0px 10px #28ff32;
+    background-color: #39c340;
+}
+
+/* --- VALIDACIONES ---*/
