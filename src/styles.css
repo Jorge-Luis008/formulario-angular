@@ -77,6 +77,7 @@ div#datosExtra{ /* Contiene: Telefono */
 input#phone{
     margin-right: 15px;
     margin-left: 25px;
+    margin-top: 5px;
     width: 200px;
     height: 20px;
 }
@@ -128,3 +129,80 @@ button#sendForm:hover{ /* Al poner el mouse por encima del boton */
 }
 
 /* --- VALIDACIONES ---*/
+/*Nombre*/
+input#name:invalid+span::after{
+    position: absolute;
+    content: "X";
+    color: #8b0000;
+}
+input#name:valid+span::after{
+    position: absolute;
+    content: "O";
+    color: #006400;
+}
+/*Apellido Paterno*/
+input#name2:invalid+span::after{
+    position: absolute;
+    content: "X";
+    color: #8b0000;
+}
+input#name2:valid+span::after{
+    position: absolute;
+    content: "O";
+    color: #006400;
+}
+/*Apellido Materno*/
+input#name3:invalid+span::after{
+    position: absolute;
+    content: "X";
+    color: #8b0000;
+}
+input#name3:valid+span::after{
+    position: absolute;
+    content: "O";
+    color: #006400;
+}
+/*Calle*/
+input#street:invalid+span::after{
+    position: absolute;
+    content: "X";
+    color: #8b0000;
+}
+input#street:valid+span::after{
+    position: absolute;
+    content: "O";
+    color: #006400;
+}
+/*Codigo Postal*/
+input#zipCode:invalid+span::after{
+    position: absolute;
+    content: "X";
+    color: #8b0000;
+}
+input#zipCode:valid+span::after{
+    position: absolute;
+    content: "O";
+    color: #006400;
+}
+/*Estado*/
+select#state:invalid+span::after{
+    position: absolute;
+    content: "X";
+    color: #8b0000;
+}
+select#state:valid+span::after{
+    position: absolute;
+    content: "O";
+    color: #006400;
+}
+/*Telefono*/
+input#phone:invalid+span::after{
+    position: absolute;
+    content: "X";
+    color: #8b0000;
+}
+input#phone:valid+span::after{
+    position: absolute;
+    content: "O";
+    color: #006400;
+}
