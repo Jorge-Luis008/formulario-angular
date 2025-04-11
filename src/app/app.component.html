@@ -1,5 +1,5 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --> 
-<article onload="loadData()">
+<article>
 
   <h1>Formulario</h1>
 
@@ -34,7 +34,7 @@
       <div id="direcciones2">
         <fieldset id="stateField">
           <legend id="sfID">Estado</legend>
-          <select name="estado" id="state" required [formControl]="stateForm">
+          <select name="estado" id="state" required [formControl]="stateForm" placeholder="Seleccione un estado" (click)="loadData()">
           <!-- Estados -->
           </select>
           <span class="validity" id="validState"></span>
@@ -42,7 +42,7 @@
 
         <fieldset id="municipalityField">
           <legend id="mfID">Municipio</legend>
-          <select name="municipio" id="municipality" [formControl]="municipalityForm">
+          <select name="municipio" id="municipality" [formControl]="municipalityForm" placeholder="Seleccione un municipio">
           <!-- Municipios -->
           </select>
         </fieldset>
@@ -63,7 +63,7 @@
         <fieldset id="gender">
           <legend>Sexo</legend>
           <div>
-            <input type="radio" name="genero" id="genderMale" value="Hombre" checked [formControl]="genderForm01">
+            <input type="radio" name="genero" id="genderMale" value="Hombre" [formControl]="genderForm01">
             <label for="genderMale">Hombre</label>
 
             <input type="radio" name="genero" id="genderFemale" value="Mujer" [formControl]="genderForm02">

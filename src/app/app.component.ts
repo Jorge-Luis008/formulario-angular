@@ -36,25 +36,29 @@ export class AppComponent{
   educationForm03 = new FormControl(''); // Educacion: Universidad
 
   async loadData(){
+    (document.getElementById("genderMale")as radio).checked = true;
     const apiStatesURL = 'https://sepomex.icalialabs.com/api/v1/states?per_page=32'; // La pagina que contiene los estados
     // Declaraciones a cambiar
     let a = 0;
-    var dataStates= [0];
+    var dataStates:any = [0];
     var statesPageLength = 0;
 
     // "fetch" para obtener el numero de estados en la pagina
-    const giveState = await fetch(apiStatesURL).then(response => response.json()).then(data => {
+    const giveState = await window.fetch(apiStatesURL).then(response => response.json()).then(data => {
       dataStates = data;
-      statesPageLength = data.states.lenght;
+      statesPageLength = dataStates.states.length;
     })
 
     // Añadir los estados al dropbox uno tras otro
-    while(a < statesPageLength){
+    const addState = document.createElement("option");
+    while(a < statesPageLength){ debugger
       if(a == statesPageLength){break;}
-      var addState = new Option((dataStates as any).states[a].name, String(a));
-      (stateList as any).options.add(addState);
+      //var addState:HTMLOptionElement = document.createElement(dataStates.states[a].name);
+      addState.textContent = dataStates.states[a].name;
+      stateList.options.add(addState);
       a++;
     }
+    
     // Llamar la funcion "giveMunicipality" para dar los municipios de Aguascalientes
     // Ya que este es el estado que se vera al iniciar la pagina
     this.giveMunicipality();
@@ -72,11 +76,11 @@ export class AppComponent{
       var data1 = 0;
 
       // Busca los municipios por el estado seleccionado
-      const resMuni = await fetch(url1)
+      const resMuni = await window.fetch(url1)
       .then(response => response.json())
       .then(data => {
         data1 = data
-        totalMuni = data.municipalities.lenght
+        totalMuni = data.municipalities.length
       });
 
       while((municipalityList as any).options.length){  //Elimina los municipios que estaban antes, si habia algunos
@@ -301,6 +305,11 @@ export class AppComponent{
     (eduInput1 as any).checked = false;
     (eduInput2 as any).checked = false;
   }
+
+  testerFunc(){
+    console.log(stateList);
+    console.log(municipalityList);
+  }
 }
 
 //Declaraciones
@@ -325,6 +334,6 @@ export class AppComponent{
   const checkButton1 = document.getElementById("sendForm");
   // Otros
   // const camposInput = [nameInput1,nameInput2,nameInput3,streetInput,zipCodeInput,stateInput,municipalityInput,phoneInput,genderInput0,genderInput1,genderInput2,eduInput0,eduInput1,eduInput2]
-  var stateList = <HTMLDivElement>document.getElementById("state");
-  var municipalityList = <HTMLDivElement>document.getElementById("municipality");
+  var stateList = document.getElementById("state") as HTMLSelectElement;
+  var municipalityList:any = <HTMLDivElement>document.getElementById("municipality");
 
